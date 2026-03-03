@@ -1,5 +1,7 @@
 import re
-text = open("Practice5/raw.txt", encoding="utf-8").read()
+from pathlib import Path
+pth = Path(__file__).with_name("raw.txt")
+text = pth.read_text(encoding="utf-8")
 Money = r"\d[\d ]*,\d{2}"
 to_float = lambda s: float(s.replace(" ", "").replace(",", "."))
 datetime = re.search(r"\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}:\d{2}", text)
